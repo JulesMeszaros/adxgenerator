@@ -5,34 +5,38 @@
     <title>ADX LION GEERATOR</title>
     <script type="text/javascript">
       window.onload = function(){
-
+        nbr_heads = 8; //change le nombre d'images de tete
+        nbr_crown1 = 8; //idem pour la couronne 1
+        nbr_crown2 = 8; //idem etc
+        nbr_eyes = 2;
+        nbr_shoulders = 6;
         //head
         var lionhead = new Image();
-        var lionheadnum = Math.floor(Math.random()*8+1);
+        var lionheadnum = Math.floor(Math.random()*nbr_heads+1);
         var lionheadname = "generatorassets/head/head"+lionheadnum+".png";
         lionhead.src=lionheadname;
 
         //crown 1
         var lioncrownone = new Image();
-        var lioncrownonenum = Math.floor(Math.random()*8+1);
+        var lioncrownonenum = Math.floor(Math.random()*nbr_crown1+1);
         var lioncrownonename = "generatorassets/crownone/crownone"+lioncrownonenum+".png";
         lioncrownone.src=lioncrownonename;
 
         //crown 2
         var lioncrowntwo = new Image();
-        var lioncrowntwonum = Math.floor(Math.random()*8+1);
+        var lioncrowntwonum = Math.floor(Math.random()*nbr_crown2+1);
         var lioncrowntwoname = "generatorassets/crowntwo/crowntwo"+lioncrowntwonum+".png";
         lioncrowntwo.src=lioncrowntwoname;
 
         //eyes
         var lioneyes = new Image();
-        var lioneyesnum = Math.floor(Math.random()*2+1);
+        var lioneyesnum = Math.floor(Math.random()*nbr_eyes+1);
         var lioneyesname = "generatorassets/eyes/eyes"+lioneyesnum+".png";
         lioneyes.src=lioneyesname;
 
         //shoulders
         var lionshoulders = new Image();
-        var lionshouldersnum = Math.floor(Math.random()*6+1);
+        var lionshouldersnum = Math.floor(Math.random()*nbr_shoulders+1);
         var lionshouldersname = "generatorassets/shoulders/shoulders"+lionshouldersnum+".png";
         lionshoulders.src=lionshouldersname;
 
