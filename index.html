@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ADX LION GEERATOR</title>
+    <script type="text/javascript">
+      window.onload = function(){
+
+        //head
+        var lionhead = new Image();
+        var lionheadnum = Math.floor(Math.random()*8+1);
+        var lionheadname = "generatorassets/head/head"+lionheadnum+".png";
+        lionhead.src=lionheadname;
+
+        //crown 1
+        var lioncrownone = new Image();
+        var lioncrownonenum = Math.floor(Math.random()*8+1);
+        var lioncrownonename = "generatorassets/crownone/crownone"+lioncrownonenum+".png";
+        lioncrownone.src=lioncrownonename;
+
+        //crown 2
+        var lioncrowntwo = new Image();
+        var lioncrowntwonum = Math.floor(Math.random()*8+1);
+        var lioncrowntwoname = "generatorassets/crowntwo/crowntwo"+lioncrowntwonum+".png";
+        lioncrowntwo.src=lioncrowntwoname;
+
+        //eyes
+        var lioneyes = new Image();
+        var lioneyesnum = Math.floor(Math.random()*2+1);
+        var lioneyesname = "generatorassets/eyes/eyes"+lioneyesnum+".png";
+        lioneyes.src=lioneyesname;
+
+        //shoulders
+        var lionshoulders = new Image();
+        var lionshouldersnum = Math.floor(Math.random()*6+1);
+        var lionshouldersname = "generatorassets/shoulders/shoulders"+lionshouldersnum+".png";
+        lionshoulders.src=lionshouldersname;
+
+        lionhead.onload = function(){
+          buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes);
+        }
+
+        lioncrownone.onload = function(){
+          buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes);
+        }
+
+        lioncrowntwo.onload = function(){
+          buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes);
+        }
+
+        lioneyes.onload = function(){
+          buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes);
+        }
+
+        lionshoulders.onload = function(){
+          buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes);
+        }
+
+      }
+
+      function buildlion(head, crown1, crown2, shoulders, eyes){
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        canvas.width = 2085;
+        canvas.height = 2085;
+
+        //draw head
+        ctx.drawImage(shoulders,(2085-head.width)/2,50)
+        ctx.drawImage(crown1,(2085-head.width)/2,50)
+        ctx.drawImage(crown2,(2085-head.width)/2,50)
+        ctx.drawImage(head,(2085-head.width)/2,50)
+        ctx.drawImage(eyes,(2085-head.width)/2,50)
+
+      }
+
+    </script>
+  </head>
+  <body>
+    <div align="center" class="">
+      <canvas id="canvas" width="2085" height="2085" style = "border: 5px solid black"></canvas>
+      <button type="button" name="button" onClick="window.location.reload()">GENERATE</button>
+    </div>
+  </body>
+</html>
