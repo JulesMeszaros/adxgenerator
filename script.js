@@ -1,14 +1,3 @@
-window.onload = function(){
-  nbr_heads = 8; //change le nombre d'images de tete
-  nbr_crown1 = 8; //idem pour la couronne 1
-  nbr_crown2 = 8; //idem etc
-  nbr_eyes = 2;
-  nbr_shoulders = 6;
-  nbr_backgrounds = 5;
-
-  genererlion();
-}
-
 function genererlion(){
   //background
   var background = new Image();

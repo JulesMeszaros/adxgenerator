@@ -1,0 +1,19 @@
+{
+  "name": "adxgenerator",
+  "version": "0.0.1",
+  "description": "ADX Lion Generator",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulesMeszaros/adxgenerator.git"
+  },
+  "author": "n8scape",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulesMeszaros/adxgenerator/issues"
+  },
+  "homepage": "https://github.com/JulesMeszaros/adxgenerator#readme"
+}
