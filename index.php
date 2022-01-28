@@ -60,7 +60,25 @@ if ($files){
 }
 ?>
 
+<?php
 
+$directory = "generatorassets/nose/";
+$noses = 0;
+$files = glob($directory . "*");
+if ($files){
+ $noses = count($files);
+}
+?>
+
+<?php
+
+$directory = "generatorassets/mouth/";
+$mouths = 0;
+$files = glob($directory . "*");
+if ($files){
+ $mouths = count($files);
+}
+?>
 
 <html lang="en" dir="ltr">
   <head>
@@ -75,6 +93,8 @@ if ($files){
       nbr_eyes = <?php echo $eyess; ?>;
       nbr_shoulders = <?php echo $shoulderss; ?>;
       nbr_backgrounds = <?php echo $backgrounds; ?>;
+      nbr_mouth = <?php echo $mouths; ?>;
+      nbr_nose = <?php echo $noses; ?>;
 
       genererlion();
     }

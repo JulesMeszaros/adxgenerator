@@ -29,6 +29,18 @@ function genererlion(){
   var lioneyesname = "generatorassets/eyes/eyes"+lioneyesnum+".png";
   lioneyes.src=lioneyesname;
 
+  //mouth
+  var lionmouth = new Image();
+  var lionmouthnum = Math.floor(Math.random()*nbr_mouth+1);
+  var lionmouthname = "generatorassets/mouth/mouth"+lionmouthnum+".png";
+  lionmouth.src=lionmouthname;
+
+  //nose
+  var lionnose = new Image();
+  var lionnosenum = Math.floor(Math.random()*nbr_nose+1);
+  var lionnosename = "generatorassets/nose/nose"+lionnosenum+".png";
+  lionnose.src=lionnosename;
+
   //shoulders
   var lionshoulders = new Image();
   var lionshouldersnum = Math.floor(Math.random()*nbr_shoulders+1);
@@ -49,45 +61,57 @@ function genererlion(){
 
 
   background.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     background_loaded = true;
   }
 
   lionhead.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     head_loaded = true;
   }
 
   lioncrownone.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     crownone_loaded = true;
   }
 
   lioncrowntwo.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     var crowntwo_loaded = true;
   }
 
   lioneyes.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     eyes_loaded = true;
   }
 
   lionshoulders.onload = function(){
-    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
-    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background);
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
+    shooulders_loaded = true;
+  }
+
+  lionnose.onload = function(){
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
+    shooulders_loaded = true;
+  }
+
+  lionmouth.onload = function(){
+    buildlion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background, lionnose,lionmouth);
+    buildInvisibleLion(lionhead, lioncrownone, lioncrowntwo, lionshoulders, lioneyes, background,lionnose, lionmouth);
     shooulders_loaded = true;
   }
 
   return{"background": background, "head": lionhead, "crownone": lioncrownone, "crowntwo": lioncrowntwo, "eyes": lioneyes, "shoulders": lionshoulders};
 }
 
-function buildlion(head, crown1, crown2, shoulders, eyes, background){
+function buildlion(head, crown1, crown2, shoulders, eyes, background,nose, mouth){
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   canvas.width = 800;
@@ -100,10 +124,12 @@ function buildlion(head, crown1, crown2, shoulders, eyes, background){
   ctx.drawImage(crown2,(2085-crown2.width)/2,0, 800, 800)
   ctx.drawImage(head,(2085-head.width)/2,0, 800, 800)
   ctx.drawImage(eyes,(2085-eyes.width)/2,0, 800, 800)
+  ctx.drawImage(nose,(2085-nose.width)/2,0, 800, 800)
+  ctx.drawImage(mouth,(2085-mouth.width)/2,0, 800, 800)
 
 }
 
-function buildInvisibleLion(head, crown1, crown2, shoulders, eyes, background){
+function buildInvisibleLion(head, crown1, crown2, shoulders, eyes, background, nose, mouth){
   var canvas = document.getElementById('canvas-invisible');
   var ctxi = canvas.getContext('2d');
   canvas.width = 2085;
@@ -116,6 +142,8 @@ function buildInvisibleLion(head, crown1, crown2, shoulders, eyes, background){
   ctxi.drawImage(crown2,(2085-crown2.width)/2,0, 2085, 2085);
   ctxi.drawImage(head,(2085-head.width)/2,0, 2085, 2085);
   ctxi.drawImage(eyes,(2085-eyes.width)/2,0, 2085, 2085);
+  ctxi.drawImage(nose,(2085-nose.width)/2,0, 2085, 2085);
+  ctxi.drawImage(mouth,(2085-mouth.width)/2,0, 2085, 2085);
 
   return canvas;
 }
