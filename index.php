@@ -101,10 +101,15 @@ if ($files){
     </script>
 
     <script type="text/javascript" src="script.js"></script>
-
+    <style media="screen">
+      h1, h2{
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>AEROSOL DELUXE LIONEL.LE GENERATOR: <?php echo $heads*$crownones*$crowntwos*$eyess*$shoulderss*$backgrounds; ?> POSSIBLE COMBINAISONS</h1>
+    <h1>AEROSOL DELUXE LIONEL.LE GENERATOR</h1>
+    <h2><?php echo $heads*$crownones*$crowntwos*$eyess*$shoulderss*$backgrounds; ?> POSSIBLE COMBINAISONS</h2>
 
     <div align="center" class="" id="generator-body">
       <!--Canvas visible sur la page -->
