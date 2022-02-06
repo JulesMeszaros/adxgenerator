@@ -1,49 +1,53 @@
+lioneyesnum = 0;
+lionmouthnum = 0;
+
+
 function genererlion(){
   //background
   var background = new Image();
-  var backgroundnum = Math.floor(Math.random()*nbr_backgrounds+1);
+  backgroundnum = Math.floor(Math.random()*nbr_backgrounds+1);
   var backgroundname = "generatorassets/background/background"+backgroundnum+".png";
   background.src=backgroundname;
 
   //head
   var lionhead = new Image();
-  var lionheadnum = Math.floor(Math.random()*nbr_heads+1);
+  lionheadnum = Math.floor(Math.random()*nbr_heads+1);
   var lionheadname = "generatorassets/head/head"+lionheadnum+".png";
   lionhead.src=lionheadname;
 
   //crown 1
   var lioncrownone = new Image();
-  var lioncrownonenum = Math.floor(Math.random()*nbr_crown1+1);
+  lioncrownonenum = Math.floor(Math.random()*nbr_crown1+1);
   var lioncrownonename = "generatorassets/crownone/crownone"+lioncrownonenum+".png";
   lioncrownone.src=lioncrownonename;
 
   //crown 2
   var lioncrowntwo = new Image();
-  var lioncrowntwonum = Math.floor(Math.random()*nbr_crown2+1);
+  lioncrowntwonum = Math.floor(Math.random()*nbr_crown2+1);
   var lioncrowntwoname = "generatorassets/crowntwo/crowntwo"+lioncrowntwonum+".png";
   lioncrowntwo.src=lioncrowntwoname;
 
   //eyes
   var lioneyes = new Image();
-  var lioneyesnum = Math.floor(Math.random()*nbr_eyes+1);
+  lioneyesnum = Math.floor(Math.random()*nbr_eyes+1);
   var lioneyesname = "generatorassets/eyes/eyes"+lioneyesnum+".png";
   lioneyes.src=lioneyesname;
 
   //mouth
   var lionmouth = new Image();
-  var lionmouthnum = Math.floor(Math.random()*nbr_mouth+1);
+  lionmouthnum = Math.floor(Math.random()*nbr_mouth+1);
   var lionmouthname = "generatorassets/mouth/mouth"+lionmouthnum+".png";
   lionmouth.src=lionmouthname;
 
   //nose
   var lionnose = new Image();
-  var lionnosenum = Math.floor(Math.random()*nbr_nose+1);
+  lionnosenum = Math.floor(Math.random()*nbr_nose+1);
   var lionnosename = "generatorassets/nose/nose"+lionnosenum+".png";
   lionnose.src=lionnosename;
 
   //shoulders
   var lionshoulders = new Image();
-  var lionshouldersnum = Math.floor(Math.random()*nbr_shoulders+1);
+  lionshouldersnum = Math.floor(Math.random()*nbr_shoulders+1);
   var lionshouldersname = "generatorassets/shoulders/shoulders"+lionshouldersnum+".png";
   lionshoulders.src=lionshouldersname;
 
@@ -108,7 +112,7 @@ function genererlion(){
     shooulders_loaded = true;
   }
 
-  return{"background": background, "head": lionhead, "crownone": lioncrownone, "crowntwo": lioncrowntwo, "eyes": lioneyes, "shoulders": lionshoulders};
+  return{"background": background, "head": lionhead, "crownone": lioncrownone, "crowntwo": lioncrowntwo, "eyes": lioneyes, "shoulders": lionshoulders, "nose": lionnose, "mouth": lionmouth};
 }
 
 function buildlion(head, crown1, crown2, shoulders, eyes, background,nose, mouth){
